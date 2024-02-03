@@ -1,0 +1,20 @@
+{
+	"name": "phaser3-vite-minimalist",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build --config vite.config.prod.ts",
+		"serve": "npx http-server build -o",
+		"build:serve": "rm -rf build && npm run build && npm run serve"
+	},
+	"devDependencies": {
+		"terser": "^5.27.0",
+		"typescript": "^5.2.2",
+		"vite": "5.0.8"
+	},
+	"dependencies": {
+		"phaser": "3.70.0"
+	}
+}
