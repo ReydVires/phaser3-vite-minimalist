@@ -20,10 +20,8 @@ export const SceneInfo = {
     key: 'GameScene',
     scene: GameSceneController,
   },
-};
+} as const;
 
-const SceneList = () => {
-  return Object.values(SceneInfo).map((info) => info.scene);
-};
+const SceneList = () => Object.values(SceneInfo).map((info) => info.scene);
 
 export default SceneList;
