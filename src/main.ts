@@ -1,6 +1,6 @@
 import { CANVAS, Game, Scale, WEBGL } from 'phaser';
 import ScreenProfile from '@/helpers/ScreenProfile';
-import SceneList from '@/scenes';
+import { sceneList } from '@/scenes';
 
 import type { Types } from 'phaser';
 
@@ -29,12 +29,11 @@ const config: Types.Core.GameConfig = {
     pixelArt: false,
     roundPixels: false,
   },
-  scene: SceneList(),
+  scene: sceneList(),
 };
 
 const game = new Game(config);
 
-const onResize = () => {
+window.addEventListener('resize', () => {
   game.scale.updateBounds();
-};
-window.addEventListener('resize', onResize);
+});

@@ -22,6 +22,4 @@ export const SceneInfo = {
   },
 } as const;
 
-const SceneList = () => Object.values(SceneInfo).map((info) => info.scene);
-
-export default SceneList;
+export const sceneList = () => Object.values(SceneInfo).map((info) => info.scene);

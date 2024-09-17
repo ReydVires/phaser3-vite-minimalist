@@ -26,7 +26,7 @@ export class GameSceneController extends Scene {
   }
 
   create() {
-    this.view.render();
+    this.view.create();
   }
 
   onRenderFinish(event: OnRenderFinish) {

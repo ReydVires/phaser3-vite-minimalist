@@ -2,7 +2,6 @@ import { Events } from 'phaser';
 import { EventName } from './Events';
 import AudioUtility from '@/modules/utility/Audio';
 import ScreenUtility from '@/modules/utility/Screen';
-import { Image } from '@/modules/gameobject/Image';
 
 export class MenuView {
   event: Phaser.Events.EventEmitter;
@@ -13,19 +12,14 @@ export class MenuView {
     this.event = new Events.EventEmitter();
   }
 
-  render() {
+  private render() {
     const { centerX, centerY } = this.screenUtil;
 
-    const logo = new Image(this._scene, centerX, centerY * 0.2, 'logo');
-    logo.gameObject.setOrigin(0.5, 0);
-
     this._scene.add
-      .text(centerX, centerY, 'Menu Here', {
-        fontFamily: 'Arial Black',
-        fontSize: 64,
+      .text(centerX, centerY, 'Click to Play!', {
+        fontFamily: 'Arial',
+        fontSize: 48,
         color: '#ffffff',
-        stroke: '#000000',
-        strokeThickness: 12,
         align: 'center',
       })
       .setOrigin(0.5);
@@ -34,7 +28,10 @@ export class MenuView {
       if (e.button !== 0) return; // Left click only
       this.event.emit(EventName.onClickScreen);
     });
+  }
 
+  create() {
+    this.render();
     this.event.emit(EventName.onRenderFinish);
   }
 }
